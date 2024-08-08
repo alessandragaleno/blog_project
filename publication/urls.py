@@ -1,8 +1,8 @@
-from django.contrib import admin
-from django.urls import path, include
+from django.contrib import admin, home
+from django.urls import path
+from .views import home  # noqa: F811
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('publication.urls')),
-    
+    path('home/', home, name='home'),
 ]
