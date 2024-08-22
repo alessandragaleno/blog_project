@@ -1,9 +1,8 @@
 from django.urls import path
-from .views import inicio,  list, delete
+from . import views
 
 urlpatterns = [
     # arquivos html
-    path('inicio/', inicio, name='inicio'),
-    path('list/', list, name='listar_author'),
-    path('delete/', delete, name='author_confirm_delete')
+    path('login/', views.login_user, name='login'),
+    path('cadastro/', views.register_user, name='cadastro')
 ]

@@ -14,4 +14,3 @@ class PublicationForm(forms.ModelForm):
         widgets = {
             'author': forms.Select(choices=[(a.id, a.name) for a in Author.objects.all()])
         }
-

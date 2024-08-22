@@ -1,0 +1,3 @@
+-r requirents.txt
+
+ruff

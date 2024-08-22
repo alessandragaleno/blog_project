@@ -1,0 +1,23 @@
+{% load static %}
+{% extends post.html %}
+
+{% block content %}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Criar Nova Publicação</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+    <h1>Criar Nova Publicação</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Salvar</button>
+    </form>
+    <a href="{% url 'post_list' %}">Voltar para a lista de postagens</a>
+</body>
+</html>
+{% endblock content %}
