@@ -43,3 +43,7 @@ def login_user(request):
     else:
         form = LoginForm(request)
     return render(request, 'author/login.html', {'form': form})
+
+
+def logout(request):
+    return render(request, 'author/logout.html')

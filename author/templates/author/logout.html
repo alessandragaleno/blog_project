@@ -1,0 +1,38 @@
+{% extends index.html %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logout</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+    <header>
+        {% block content_logout %}
+        <h1>Logout</h1>
+        <nav>
+            <ul>
+                <li><a href="{% url 'home' %}">Início</a></li>
+                <li><a href="{% url 'login' %}">Login</a></li>
+                <li><a href="{% url 'register' %}">Registrar</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <h2>Você foi desconectado com sucesso!</h2>
+            <p>Obrigado por usar o aplicativo Author. Você agora está desconectado.</p>
+            <p><a href="{% url 'login' %}">Voltar para a página de login</a></p>
+            <p><a href="{% url 'home' %}">Voltar para a página inicial</a></p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Author App. Todos os direitos reservados.</p>
+    </footer>
+    {% endblock content_logout %}
+</body>
+</html>
+{% endblock %}
