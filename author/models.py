@@ -5,5 +5,5 @@ from django.contrib.auth.models import AbstractUser
 class Author(AbstractUser):
     name = models.CharField(max_length=50)
 
-class Meta:
-    db_table = 'authors'
+    class Meta:
+        db_table = 'authors'

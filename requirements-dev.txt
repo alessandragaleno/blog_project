@@ -1,3 +1,4 @@
 -r requirents.txt
 
-ruff
+"ipython"
+"ruff"

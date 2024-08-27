@@ -1,5 +1,5 @@
 from django import forms
-from .models import User
+from .models import Author
 from django.contrib.auth.forms import UserCreationForm  # noqa: F401
 
 class LoginForm(forms.Form):
@@ -7,5 +7,5 @@ class LoginForm(forms.Form):
     password = forms.CharField(required=True, widget=forms.PasswordInput)
 
     class Meta:
-        model = User
+        model = Author
         fields = ('username', 'email', 'password1', 'password2')

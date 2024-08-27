@@ -1,4 +1,3 @@
-from tkinter import Widget
 from django import forms
 
 from .models import Publication
@@ -10,3 +9,4 @@ class PublicationForm(forms.ModelForm):
         widget = {
             'pub_title': forms.TextInput(attrs={'arrow' : 10, 'cols': 50})
         }
+        
