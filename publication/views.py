@@ -1,4 +1,4 @@
-from django.shortcuts import redirect, render
+from django.shortcuts import redirect, render, render, get_object_or_404
 
 from .forms import PublicationForm
 from .models import Publication
@@ -28,3 +28,19 @@ def adicionar_publication(request):
             return redirect('index')
         else:
             return render(request, 'adicionar_publication.html', {'form': form})
+
+def adicionar_publication(request):
+    if request.method == 'POST':
+        form = PublicationForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('index')
+    else:
+        form = PublicationForm()  # Adicione isso para exibir um formulário vazio em uma solicitação GET
+
+    return render(request, 'adicionar_publication.html', {'form': form})
+
+
+def post_detail(request, id):
+    publication = get_object_or_404(Publication, id=id)
+    return render(request, 'post.html', {'publication': publication})

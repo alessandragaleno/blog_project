@@ -25,9 +25,8 @@
                     <ul class="navbar-nav ms-auto py-4 py-lg-0">
                         <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="{% url 'inicio' %}">Inicio</a></li>
                         <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="{% url 'sobre' %}">Sobre</a></li>
-                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="post.html">Postagem</a></li>
-                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="contact.html">Contato</a></li>
-                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="home.html">Página Inicial</a></li>
+                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="{% url 'post' id=1 %}">Postagem</a></li>
+                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="{% url 'contato' %}">Contato</a></li>
                     </ul>
                 </div>
             </div>
@@ -47,9 +46,22 @@
             </div>
         </header>
         {% endblock page_header %}
-        <!-- Main Content-->
-         {% block main %}
+
+        <!--caminho de about.html com base.html-->
+        {% block main %}
         {% endblock main %}
+
+        <!--caminho de contact.html com a base.html -->
+        {% block main_contact %}
+        {% endblock main_contact %}
+
+        <!--caminho de index.html com a base.html -->
+        {% block index%}
+        {% endblock index %}
+
+        <!--caminho de post.html com a base.html -->
+        {%  block post %}
+        {% endblock post %}
         <!-- Footer-->
         <footer class="border-top">
             <div class="container px-4 px-lg-5">
