@@ -1,5 +1,6 @@
-{% extends index.html %}
-{% block content %}
+{% extends base.html %}
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -10,11 +11,11 @@
 </head>
 <body>
     <header>
-        {% block content_logout %}
+        {% block logout %}
         <h1>Logout</h1>
         <nav>
             <ul>
-                <li><a href="{% url 'home' %}">Início</a></li>
+                <li><a href="{% url 'base' %}">Início</a></li>
                 <li><a href="{% url 'login' %}">Login</a></li>
                 <li><a href="{% url 'register' %}">Registrar</a></li>
             </ul>
@@ -24,15 +25,14 @@
         <section>
             <h2>Você foi desconectado com sucesso!</h2>
             <p>Obrigado por usar o aplicativo Author. Você agora está desconectado.</p>
-            <p><a href="{% url 'login' %}">Voltar para a página de login</a></p>
-            <p><a href="{% url 'home' %}">Voltar para a página inicial</a></p>
+            <p><a href="{% url 'logout' %}">Voltar para a página de login</a></p>
+            <p><a href="{% url 'base' %}">Voltar para a página inicial</a></p>
         </section>
     </main>
 
     <footer>
         <p>&copy; 2024 Author App. Todos os direitos reservados.</p>
     </footer>
-    {% endblock content_logout %}
+    {% endblock logout %}
 </body>
 </html>
-{% endblock %}

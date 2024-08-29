@@ -41,7 +41,7 @@ def login_user(request):
         else:
             messages.error(request, 'Nome de usuário ou senha inválidas!')
     else:
-        form = LoginForm(request)
+        form = LoginForm()
     return render(request, 'author/login.html', {'form': form})
 
 
