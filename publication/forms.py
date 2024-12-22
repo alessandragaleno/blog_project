@@ -9,4 +9,8 @@ class PublicationForm(forms.ModelForm):
         widget = {
             'pub_title': forms.TextInput(attrs={'arrow' : 10, 'cols': 50})
         }
-        
+
+
+class LoginForm(forms.Form):
+    username = forms.CharField()
+    password = forms.CharField(widget=forms.PasswordInput)
