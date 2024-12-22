@@ -1,24 +1,48 @@
 {% extends 'base.html' %}
+{% load static %}
+
 {% block page_header %}
 {% endblock page_header %}
+
 {% block main %}
-<main class="mb-4 mt-5">
+
+<main class="d-flex align-items-center justify-content-center min-vh-100">
     <div class="container px-4 px-lg-5">
-        <div class="gx-4 gx-lg-5 justify-content-center">
+        <div class="row justify-content-center">
             <div class="col-md-10 col-lg-8 col-xl-7">
-                <h1>Login</h1>
-                <div class="my-5">
-                    <form method="POST">
+                <h1 class="text-center mt-4">Login</h1>
+                <div class="text-center mt-4">
+                    <form class="px-4 py-3 mb-4" method="POST">
                         {% csrf_token %}
-                        {{ form }}
-                        <a href="#">Esqueci a senha</a>
-                        <a href="{% url 'cadastro' %}">Cadastrar-se</a>
-                        <br />
-                        <button type="submit" class="btn btn-primary text-uppercase">Entrar</button>
+                    
+                        <!-- Campos do Formulário -->
+                        <div class="mb-3">
+                            <!-- Campo de Username -->
+                            <input type="text" id="username" name="username" class="form-control form-control-sm w-75 mx-auto" placeholder="Nome" required>
+                        </div>
+                        
+                        <div class="mb-3">
+                            <!-- Campo de Password -->
+                             
+                            <input type="password" id="password" name="password" class="form-control form-control-sm w-75 mx-auto" placeholder="Senha" required>
+                        </div>
+                    
+                        <!-- Links de Ação -->
+                        <div class="text-center mb-3">
+                            <a href="#">Esqueci a senha</a> | 
+                            <a href="{% url 'cadastro' %}">Cadastrar-se</a>
+                        </div>
+                    
+                        <!-- Botão de Submissão -->
+                        <div class="text-center mt-3">
+                            <button type="submit" class="btn btn-primary text-uppercase">Entrar</button>
+                        </div>
                     </form>
+                    
+                    
                 </div>
             </div>
         </div>
     </div>
-</main>                    
+</main>
 {% endblock main %}

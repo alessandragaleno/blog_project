@@ -9,3 +9,13 @@ class LoginForm(forms.Form):
     class Meta:
         model = Author
         fields = ('username', 'email', 'password1', 'password2')
+
+
+class LogoutForm(forms.Form):
+    username = forms.CharField(max_length=255, required=False)
+    password = forms.CharField(required=False, widget=forms.PasswordInput)
+
+    class Meta:
+        model = Author
+        fields = ('username', 'email', 'password1', 'password2')
+
